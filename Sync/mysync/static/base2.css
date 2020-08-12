@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+body { font-family: 'Montserrat' sans-serif; background-color: #f59e98; }
+
+
+.jumbotron{
+    background-color: #E2495B;
+    color: white;
+    font-weight: bolder;
+}
+
+.container-fluid{
+  color: white;
+}
+
+.owner{
+  margin-top: 40%;
+  text-align: center;
+  color: #b32d43;
+  font-weight: bolder;
+  font-style: italic;
+}

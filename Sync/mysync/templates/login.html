@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    {% import "bootstrap/wtf.html" as wtf %}
+    <link rel="stylesheet" type = "text/css" href="{{url_for('static', filename='base2.css')}}">
+
+    <div class="jumbotron">
+      <h1 class="display-2">Synch.</h1>
+    </div>
+
+    <div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+            <form method="POST">
+              {# This hidden_tag is a CSRF security feature. #}
+              {{ form.hidden_tag() }}
+              {{ wtf.form_field(form.username) }}
+              <input class="btn btn-danger" id="login" name="login" type="submit" value="Log In">
+              <input class="btn btn-danger" id="register" name="register" type="submit" value="Register">
+            </form>
+        </div>
+    </div>
+    </div>
+
+    <br>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+            <div class="alert alert-warning" role="alert" id="alert" style="position:fixed; margin-left:23%;">
+              {{ message }}
+            </div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+    
+
+
+    <script>
+
+    $(document).ready(function() {
+      $("#alert").delay(2000).slideUp(300);
+    });
+
+    </script>
+
+  </body>
+
+</html>

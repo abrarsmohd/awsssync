@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+body { font-family: 'Montserrat' sans-serif; background-color: #f59e98; }
+
+.box{
+  padding: 10px 10px 10px;
+  margin-left: 3%;
+  margin-right: 3%;
+  border-radius: 5px 5px 5px 5px;
+  color: white;
+  font-weight: bolder;
+}
+
+.scrol{
+  height: 350px;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+.sync{
+  color: white;
+}
+
+.jumbotron{
+    background-color: #E2495B;
+    color: white;
+    font-weight: bolder;
+}
+
+.names{
+  margin-top: 5%;
+  margin-left: 10%;
+  font-size: 50px;
+  color: #a13b3b;
+}
+
+.alert{
+  margin-top: 20%;
+  margin-left: 20%;
+  margin-right: 20%;
+}
